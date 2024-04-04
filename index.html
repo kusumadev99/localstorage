@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .md{
+            height:250px;
+            width:250px;
+            border:1px solid black;
+            margin-left: 400px;
+            position: relative;
+            top:50px;
+            border:none;
+            background:linear-gradient(pink,skyblue);
+        }
+        .in{
+            position: relative;
+            left:20px;
+            top:30px;
+            background-color:aliceblue;
+
+        }
+        .in1{
+            position: relative;
+            left:20px;
+            top:40px;
+            background-color:aliceblue;
+            
+
+        }
+        .in2{
+            position: relative;
+            left:20px;
+            top:50px;
+            background-color:aliceblue;
+
+        }
+        .in3{
+            position: relative;
+            left:20px;
+            top:60px;
+            background-color:aliceblue;
+
+        }
+        .in4{
+            position: relative;
+            right:100px;
+            top:100px;
+            background-color:aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div class="md">
+        <input class="in" type="text" placeholder="enter username"/>
+        <input class="in1" type="phonenumber"placeholder="enter your phone num"/>
+        <input class="in2" type="email" placeholder="enter email"/>
+        <input class="in3" type="password" placeholder="set password"/>
+        <button class="in4">signup</button>
+        </div>
+    </form>
+    <script>
+        let getform=document.getElementsByTagName('form');
+        console.log(getform[0][0].value);
+        getform[0].addEventListener("submit",(e)=>{
+            e.preventDefault();
+            console.log(getform[0][0].value);
+            console.log(getform[0][1].value);
+            console.log(getform[0][2].value);
+            console.log(getform[0][3].value);
+            if(getform[0][0].value==0 &&getform[0][1].value==0){
+alert("you must enter the username and phone number")
+            }
+            else{
+localStorage.setItem("username",getform[0][0].value);
+localStorage.setItem("contact",getform[0][1].value);
+localStorage.setItem("email",getform[0][2].value);
+localStorage.setItem("password",getform[0][3].value);
+            }
+        })
+    </script>
+</body>
+</html>
